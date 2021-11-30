@@ -4,6 +4,13 @@ def is_palindrome(string):
         return True
     return False
 
+def remove(array):
+    result = []
+    for i in range(0,len(array)-1):
+        if len(array[i]) > 1:
+            result.append(array[i])
+    return result
+
 def palindromes(palindrome_string) -> list:
 
     CutStart = palindrome_string
@@ -11,7 +18,8 @@ def palindromes(palindrome_string) -> list:
     palindrome = []
        
     if is_palindrome(palindrome_string):
-        return palindrome_string
+        palindrome.append(palindrome_string)
+        return palindrome
 
         #while 1 and 2 browse palindrome_string for palindromes and saves them in list palindrome
         #while loop 2 is looking in CutEnd for palindromes (part of palindrome_string reduced by last char of palindrome_string)
@@ -28,6 +36,5 @@ def palindromes(palindrome_string) -> list:
                 CutEnd = CutEnd [len(CutEnd):]
             CutEnd = CutEnd [:-1]
         CutEnd = CutStart
+    palindrome = remove(palindrome)
     return palindrome
-
-#palindromes("wowakayak")
