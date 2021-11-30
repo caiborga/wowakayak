@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>{{ pagetitle }}</title>
+    </head>
+    <body>
+        <p>"{{ input }}" contains following palindromes:</p>
+        <ul>
+            {% for element in output %}
+            <li>{{ element }}</li>
+            {% endfor %}
+        </ul>
+    </body>
